@@ -2,15 +2,17 @@
 #include <string>
 #include <ostream>
 #include <locale>
+#include <iostream>
+#include <fstream>
 
 class Out {
 private:
 	static const std::string CHARSET_NAME;
 	static const std::locale LOCALE;
-	std::ostream out;
+	std::ostream* out;
 public:
 	Out();
-	Out(const std::ostream& os);
+	Out(std::ostream& os);
 	Out(const std::string& filename);
 	// Out(Socket socket) NB: will need to implement Socket library
 
